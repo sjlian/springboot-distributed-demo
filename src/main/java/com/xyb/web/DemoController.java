@@ -56,9 +56,4 @@ public class DemoController {
         return time;
     }
 
-    @ApiOperation(value="演示通知和错误", notes="发生错误了")
-    @GetMapping("/json")
-    public String json() {
-        throw new MyException("发生错误了");
-    }
 }

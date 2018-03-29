@@ -14,11 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 public class GlobalExceptionHandler {
     @ExceptionHandler(value = MyException.class)
     @ResponseBody
-    public RestInfo<String> jsonErrorHandler(HttpServletRequest req, MyException e) throws Exception {
+    public RestInfo<String> jsonErrorHandler(HttpServletRequest req, Throwable t) {
+        MyException myException = MyException.wrapIfNeeded(t);
         RestInfo<String> r = new RestInfo<>();
-        r.setMessage(e.getMessage());
-        r.setCode(RestInfo.ERROR);
-        r.setData("Some Data");
+        r.setMessage(myException.getMessage());
+        r.setCode(myException.getCode());
+        r.setData("fail");
         r.setUrl(req.getRequestURL().toString());
         return r;
     }

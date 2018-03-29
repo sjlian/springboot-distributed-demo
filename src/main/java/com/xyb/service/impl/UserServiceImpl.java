@@ -2,6 +2,7 @@ package com.xyb.service.impl;
 
 import com.xyb.domain.entity.UserEntity;
 import com.xyb.domain.repository.UserRepository;
+import com.xyb.exception.MyException;
 import com.xyb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,11 +36,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteById(Long id) {
+        if (id == 1){
+            throw MyException.notAllowed(null,"不允许删除");
+        }
         userRepository.deleteById(id);
     }
 
     @Override
     public Optional<UserEntity> findById(Long id) {
         return userRepository.findById(id);
+    }
+
+    @Override
+    public UserEntity update(UserEntity entity) {
+        return userRepository.save(entity);
     }
 }

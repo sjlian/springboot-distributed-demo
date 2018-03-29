@@ -24,6 +24,10 @@ public class UserEntity {
     @Column(name = "age")
     @ApiModelProperty("年龄")
     private Integer age;
+    @Version
+    @ApiModelProperty("乐观锁，version=version时才更新，同时version+1，jpa加上version注解后自动实现了")
+    @Column(name = "version")
+    private Long version;
 
     public Long getId() {
         return id;
@@ -47,5 +51,13 @@ public class UserEntity {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
     }
 }
