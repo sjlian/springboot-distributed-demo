@@ -19,7 +19,7 @@ public interface UserService {
 
     void deleteById(Long id);
 
-    Optional<UserEntity> findById(Long id);
+    UserEntity findById(Long id);
 
     UserEntity update(UserEntity entity);
 }

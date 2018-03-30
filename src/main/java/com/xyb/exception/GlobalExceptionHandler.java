@@ -20,7 +20,7 @@ public class GlobalExceptionHandler {
         r.setMessage(myException.getMessage());
         r.setCode(myException.getCode());
         r.setData("fail");
-        r.setUrl(req.getRequestURL().toString());
+        r.setUrl(req.getRequestURI());
         return r;
     }
 }

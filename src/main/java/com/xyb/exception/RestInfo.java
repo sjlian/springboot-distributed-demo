@@ -7,8 +7,6 @@ package com.xyb.exception;
 public class RestInfo<T> {
     public static final Integer OK = 0;
 
-
-
     private Integer code;
     private String message;
     private String url;
