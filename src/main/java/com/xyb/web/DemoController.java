@@ -44,9 +44,8 @@ public class DemoController {
     }
 
     @GetMapping("/getSession")
-    public String getSession(String key,HttpServletRequest request){
-        //request既可以直接通过写参数获取，也可以调用系统提供的获取,这里前端不需要传参数也会获取request，同理response
-        HttpSession session = request.getSession();
+    public String getSession(String key,HttpServletRequest request,HttpServletResponse response,HttpSession session){
+        //系统会自动获取requset，response，session
         return (String) session.getAttribute(key);
     }
 
