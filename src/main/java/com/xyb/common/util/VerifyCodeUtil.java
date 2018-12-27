@@ -1,4 +1,4 @@
-package com.xyb.common;
+package com.xyb.common.util;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -125,16 +125,6 @@ public class VerifyCodeUtil {
         Random rand = new Random();
         Graphics2D g2 = image.createGraphics();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-//        Color[] colors = new Color[5];
-//        Color[] colorSpaces = new Color[]{Color.WHITE, Color.CYAN,
-//                Color.GRAY, Color.LIGHT_GRAY, Color.MAGENTA, Color.ORANGE,
-//                Color.PINK, Color.YELLOW};
-//        float[] fractions = new float[colors.length];
-//        for (int i = 0; i < colors.length; i++) {
-//            colors[i] = colorSpaces[rand.nextInt(colorSpaces.length)];
-//            fractions[i] = rand.nextFloat();
-//        }
-//        Arrays.sort(fractions);
 
         g2.setColor(Color.GRAY);// 设置边框色
         g2.fillRect(0, 0, w, h);
@@ -155,8 +145,8 @@ public class VerifyCodeUtil {
         }
 
         // 添加噪点
-        float yawpRate = 0.03f;// 噪声率
-        int area = (int) (yawpRate * w * h);
+        float yapRate = 0.03f;// 噪声率
+        int area = (int) (yapRate * w * h);
         for (int i = 0; i < area; i++) {
             int x = random.nextInt(w);
             int y = random.nextInt(h);

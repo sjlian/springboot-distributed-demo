@@ -1,16 +1,18 @@
 package com.xyb.service.impl;
 
+import com.xyb.common.util.LogUtil;
 import com.xyb.domain.entity.UserEntity;
 import com.xyb.domain.repository.UserRepository;
-import com.xyb.exception.MyException;
+import com.xyb.response.MyException;
 import com.xyb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @Author lian
@@ -27,7 +29,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Cacheable(cacheNames = "entity",key = "'user_' + #id")
     public UserEntity save(UserEntity entity) {
         return userRepository.save(entity);
     }
@@ -50,8 +51,15 @@ public class UserServiceImpl implements UserService {
     @Override
     @Cacheable(cacheNames = "entity",key = "'user_' + #id")
     public UserEntity findById(Long id) {
+        LogUtil.info("从数据库里获取数据" + id);
         return userRepository.findById(id).get();
     }
+
+    @Override
+    public Page<UserEntity> pageUser(Pageable pageable) {
+        return userRepository.findAll(pageable);
+    }
+
 
     @Override
     @CacheEvict(cacheNames = "entity",key = "'user_' + #entity.id")

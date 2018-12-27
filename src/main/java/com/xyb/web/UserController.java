@@ -1,9 +1,9 @@
 package com.xyb.web;
 
-import com.xyb.common.VerifyCodeUtil;
+import com.xyb.common.util.VerifyCodeUtil;
 import com.xyb.domain.entity.UserEntity;
-import com.xyb.exception.MyException;
-import com.xyb.exception.RestInfo;
+import com.xyb.response.MyException;
+import com.xyb.response.RestInfo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +16,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 演示user在内存中的操作
+ * 脱离数据库演示user在内存中的操作
  * @Author lian
  * @Date 2018/3/20
  */
@@ -30,31 +30,31 @@ public class UserController {
     private static Map<Long, UserEntity> users = new ConcurrentHashMap<>();
 
     @GetMapping("/list")
-    public List<UserEntity> getUserList() {
+    public RestInfo getUserList() {
         List<UserEntity> r = new ArrayList<>(users.values());
-        return r;
+        return new RestInfo<>(r);
     }
 
     @PostMapping(value="/add")
-    public UserEntity addUser(@RequestBody @Valid UserEntity user) {
+    public RestInfo addUser(@RequestBody @Valid UserEntity user) {
        //@RequestBody 会自动把前端传的json转换成user对象
-        return user;
+        return new RestInfo<>(user);
     }
 
 
     @GetMapping(value="/get/{id}")
-    public UserEntity getUser(@PathVariable Long id) {
+    public RestInfo getUser(@PathVariable Long id) {
         // 处理"/users/{id}"的GET请求，用来获取url中id值的User信息
         // url中的id可通过@PathVariable绑定到函数的参数中
-        return users.get(id);
+        return new RestInfo<>(users.get(id));
     }
 
     @PostMapping(value="/update/{id}")
-    public String updateUser(@PathVariable Long id,@RequestBody UserEntity user) {
+    public RestInfo updateUser(@PathVariable Long id,@RequestBody UserEntity user) {
         UserEntity u = users.get(id);
         u.setName(user.getName());
         u.setAge(user.getAge());
-        return "success";
+        return new RestInfo<>(u);
     }
 
 

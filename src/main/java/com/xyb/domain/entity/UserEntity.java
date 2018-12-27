@@ -10,10 +10,9 @@ import javax.validation.constraints.NotNull;
  * @Date 2018/3/20
  */
 @Entity
-@Table(name = "user")
+@Table(name = "t_user")
 public class UserEntity {
     @Id
-    @GeneratedValue
     @Column(name = "id")
     @ApiModelProperty("id")
     private Long id;

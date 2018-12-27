@@ -2,6 +2,8 @@ package com.xyb.domain.repository;
 
 import com.xyb.domain.entity.UserEntity;
 import org.hibernate.annotations.SQLUpdate;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -18,4 +20,6 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
     @Query("from UserEntity u where u.name=:name")
     UserEntity findUser(@Param("name") String name);
+
+    Page<UserEntity> findAll(Pageable pageable);
 }

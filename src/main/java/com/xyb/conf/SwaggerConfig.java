@@ -1,5 +1,6 @@
 package com.xyb.conf;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,16 +11,14 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @Author lian
  * @Date 2018/3/20
  */
 @Configuration
-@EnableSwagger2
 @ConfigurationProperties(prefix = "swagger.conf")
-public class SwaggerConf {
+public class SwaggerConfig {
     private String name;
     private String url;
     private String email;
@@ -35,7 +34,7 @@ public class SwaggerConf {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("洗衣帮——文档")
+                .title("DEMO——文档")
                 .description("这里是详细说明")
                 .contact(new Contact(name,url,email))
                 .version("1.0")

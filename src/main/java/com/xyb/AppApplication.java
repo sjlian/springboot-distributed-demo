@@ -6,12 +6,18 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = "com.xyb.domain.repository")
 @EnableAsync
 @EnableScheduling
 @EnableCaching
+@EnableSwagger2
+@EnableJpaRepositories(basePackages = "com.xyb.domain.repository")
+@EnableWebMvc
+@EnableRedisHttpSession
 public class AppApplication {
 
 	public static void main(String[] args) {

@@ -1,11 +1,12 @@
-package com.xyb.exception;
+package com.xyb.response;
 
 /**
  * @Author lian
  * @Date 2018/3/20
  */
 public class RestInfo<T> {
-    public static final Integer OK = 0;
+    private final Integer OK = 0;
+    private final String SUCCESS = "success";
 
     private Integer code;
     private String message;
@@ -17,10 +18,8 @@ public class RestInfo<T> {
 
     public RestInfo(T data) {
         this.data = data;
-    }
-
-    public static Integer getOK() {
-        return OK;
+        this.code = OK;
+        this.message = SUCCESS;
     }
 
     public Integer getCode() {

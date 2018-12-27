@@ -1,4 +1,4 @@
-package com.xyb.exception;
+package com.xyb.response;
 
 /**
  * @Author lian
@@ -30,7 +30,7 @@ public class MyException extends RuntimeException{
             return (MyException) t;
         } else {    //TODO 这里可以捕获各种异常，如主键冲突异常，权限验证异常等等然后转换成自定义通知。
             //所有自定义的异常都捕获不到，说明可能是系统内部错误导致的。
-            return MyException.internalError(t, t.getMessage());
+            return internalError(t, t.getMessage());
         }
     }
 

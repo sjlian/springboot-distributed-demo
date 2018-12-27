@@ -1,9 +1,10 @@
 package com.xyb.service;
 
 import com.xyb.domain.entity.UserEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @Author lian
@@ -22,4 +23,6 @@ public interface UserService {
     UserEntity findById(Long id);
 
     UserEntity update(UserEntity entity);
+
+    Page<UserEntity> pageUser(Pageable pageable);
 }
