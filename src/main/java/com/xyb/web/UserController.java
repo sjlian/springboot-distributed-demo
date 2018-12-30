@@ -24,40 +24,6 @@ import java.util.concurrent.ConcurrentHashMap;
 @RequestMapping("/user1")
 public class UserController {
 
-    /**
-     * 内存中保存，用于演示。ConcurrentHashMap是线程安全的map
-     */
-    private static Map<Long, UserEntity> users = new ConcurrentHashMap<>();
-
-    @GetMapping("/list")
-    public RestInfo getUserList() {
-        List<UserEntity> r = new ArrayList<>(users.values());
-        return new RestInfo<>(r);
-    }
-
-    @PostMapping(value="/add")
-    public RestInfo addUser(@RequestBody @Valid UserEntity user) {
-       //@RequestBody 会自动把前端传的json转换成user对象
-        return new RestInfo<>(user);
-    }
-
-
-    @GetMapping(value="/get/{id}")
-    public RestInfo getUser(@PathVariable Long id) {
-        // 处理"/users/{id}"的GET请求，用来获取url中id值的User信息
-        // url中的id可通过@PathVariable绑定到函数的参数中
-        return new RestInfo<>(users.get(id));
-    }
-
-    @PostMapping(value="/update/{id}")
-    public RestInfo updateUser(@PathVariable Long id,@RequestBody UserEntity user) {
-        UserEntity u = users.get(id);
-        u.setName(user.getName());
-        u.setAge(user.getAge());
-        return new RestInfo<>(u);
-    }
-
-
     @ApiOperation("获取验证码图片")
     @GetMapping("/getVerifyImg")
     public void getVerifyImg(HttpServletRequest request, HttpServletResponse response) throws IOException {

@@ -110,6 +110,17 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.8.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring-boot-web-starter</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.printparam</groupId>
+            <artifactId>printparam-spring-boot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
 
     </dependencies>
 

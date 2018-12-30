@@ -25,4 +25,7 @@ public interface UserService {
     UserEntity update(UserEntity entity);
 
     Page<UserEntity> pageUser(Pageable pageable);
+
+    UserEntity findByUsername(String username);
+
 }

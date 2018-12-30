@@ -60,6 +60,11 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll(pageable);
     }
 
+    @Override
+    public UserEntity findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
 
     @Override
     @CacheEvict(cacheNames = "entity",key = "'user_' + #entity.id")

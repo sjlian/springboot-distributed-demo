@@ -16,13 +16,20 @@ public class UserEntity {
     @Column(name = "id")
     @ApiModelProperty("id")
     private Long id;
-    @Column(name = "name")
-    @ApiModelProperty(value = "姓名",allowEmptyValue = false,readOnly=false)
-    @NotNull(message = "姓名不能为空")
-    private String name;
-    @Column(name = "age")
-    @ApiModelProperty("年龄")
-    private Integer age;
+
+    @Column(name = "username")
+    @ApiModelProperty(value = "用户名",allowEmptyValue = false,readOnly=false)
+    @NotNull(message = "用户名不能为空")
+    private String username;
+
+    @Column(name = "password")
+    @ApiModelProperty("密码")
+    private String password;
+
+    @Column(name = "salt")
+    @ApiModelProperty("密码盐")
+    private String salt;
+
     @Version
     @ApiModelProperty("乐观锁，version=version时才更新，同时version+1，jpa加上version注解后自动实现了")
     @Column(name = "version")
@@ -36,20 +43,20 @@ public class UserEntity {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public Integer getAge() {
-        return age;
+    public String getSalt() {
+        return salt;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
 
     public Long getVersion() {
@@ -58,5 +65,13 @@ public class UserEntity {
 
     public void setVersion(Long version) {
         this.version = version;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
