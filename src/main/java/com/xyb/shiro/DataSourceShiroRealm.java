@@ -65,7 +65,7 @@ public class DataSourceShiroRealm extends AuthorizingRealm {
         UsernamePasswordToken upToken = (UsernamePasswordToken) authenticationToken;
         String username = upToken.getUsername();
         if (username == null) {
-            throw new AccountException("Null usernames are not allowed by this realm.");
+            throw new AccountException("Null username are not allowed by this realm.");
         } else {
             UserEntity userEntity = userService.findByUsername(username);
             if (userEntity == null){

@@ -4,14 +4,14 @@ import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "roles_permissions")
 public class RolesPermissionEntity {
-
-
+    @Id
     @Column(name = "role_name")
     @ApiModelProperty(value = "角色名",allowEmptyValue = false,readOnly=false)
     @NotNull(message = "角色名不能为空")
