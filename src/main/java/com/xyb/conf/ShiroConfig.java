@@ -17,6 +17,7 @@ public class ShiroConfig {
     @Bean
     public ShiroFilterChainDefinition shiroFilterChainDefinition() {
         DefaultShiroFilterChainDefinition chainDefinition = new DefaultShiroFilterChainDefinition();
+        //TODO 根据实际情况进行配置
 
         // logged in users with the 'admin' role
         chainDefinition.addPathDefinition("/admin/**", "authc, roles[admin]");

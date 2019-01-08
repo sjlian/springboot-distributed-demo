@@ -2,6 +2,7 @@ package com.xyb.domain.entity;
 
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.annotation.Generated;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -14,6 +15,7 @@ import javax.validation.constraints.NotNull;
 public class UserEntity {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty("id")
     private Long id;
 

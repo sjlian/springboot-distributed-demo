@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "roles_permissions")
+@Table(name = "t_roles_permission")
 public class RolesPermissionEntity {
     @Id
     @Column(name = "role_name")
@@ -17,7 +17,7 @@ public class RolesPermissionEntity {
     @NotNull(message = "角色名不能为空")
     private String roleName;
 
-    @Column(name = "permissions")
+    @Column(name = "permission")
     @ApiModelProperty(value = "角色权限",allowEmptyValue = true,readOnly=false)
     @NotNull(message = "角色权限")
     private String permission;

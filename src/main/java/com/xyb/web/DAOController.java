@@ -55,4 +55,15 @@ public class DAOController {
         Page<UserEntity> list = userService.pageUser(pageable);
         return new RestInfo<>(list);
     }
+
+    /**
+     * 测试事务回滚
+     * @param userEntity
+     * @return
+     */
+    @PostMapping("/deleteWithTransaction")
+    public RestInfo deleteWithTransaction(@RequestBody UserEntity userEntity){
+        userService.deleteWithTransaction(userEntity);
+        return new RestInfo<>();
+    }
 }

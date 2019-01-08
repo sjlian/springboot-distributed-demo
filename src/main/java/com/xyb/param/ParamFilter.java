@@ -14,7 +14,7 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebFilter(urlPatterns = "/*",filterName = "param")
+//@WebFilter(urlPatterns = "/api/*",filterName = "param")
 public class ParamFilter implements Filter {
     private static final Logger LOGGER = LoggerFactory.getLogger("print-param:");
 

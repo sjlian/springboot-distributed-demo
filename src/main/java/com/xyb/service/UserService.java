@@ -28,4 +28,6 @@ public interface UserService {
 
     UserEntity findByUsername(String username);
 
+    void deleteWithTransaction(UserEntity entity);
+
 }
