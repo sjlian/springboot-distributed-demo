@@ -1,7 +1,8 @@
 -- mysql
-create database xyb_0;
-create database xyb_1;
-create database xyb_2;
+create database demo_0;
+create database demo_0;
+create database demo_1;
+create database demo_2;
 -- 每个database分别执行下面创建表的sql
 CREATE TABLE `t_order` (
   `order_no` varchar(255) NOT NULL,
