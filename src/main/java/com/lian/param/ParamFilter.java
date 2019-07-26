@@ -1,7 +1,6 @@
 package com.lian.param;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -14,9 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 //@WebFilter(urlPatterns = "/api/*",filterName = "param")
+@Slf4j(topic = "print-param:")
 public class ParamFilter implements Filter {
-    private static final Logger LOGGER = LoggerFactory.getLogger("print-param:");
-
     @Override
     public void init(FilterConfig filterConfig) {
     }
@@ -38,22 +36,22 @@ public class ParamFilter implements Filter {
         String url = r.getRequestURI();
         ParamRequestWrapper requestWrapper;
         String replaceUrl = url.replaceAll("/", "").trim();
-        LOGGER.info("request url:" + url + "   & queryString:" + path);
+        log.info("request url:" + url + "   & queryString:" + path);
 
         ResponseWrapper responseWrapper = new ResponseWrapper((HttpServletResponse) servletResponse);
         requestWrapper = new ParamRequestWrapper((HttpServletRequest) servletRequest);
         try {
             Map map = servletRequest.getParameterMap();
-            LOGGER.info("request parameter map:" + map);
+            log.info("request parameter map:" + map);
             BufferedReader bufferedReader = requestWrapper.getReader();
             String line;
             StringBuilder sb = new StringBuilder();
             while ((line = bufferedReader.readLine()) != null) {
                 sb.append(line);
             }
-            LOGGER.info("request header:" + sb.toString());
+            log.info("request header:" + sb.toString());
         } catch (Exception e) {
-            LOGGER.warn("request error:", e);
+            log.warn("request error:", e);
         }
         filterChain.doFilter(requestWrapper, responseWrapper);
 
@@ -64,8 +62,8 @@ public class ParamFilter implements Filter {
         out.write(result);
         out.flush();
         out.close();
-        LOGGER.info("response return data:" + result);
-        LOGGER.info("response url:" + url + " httpStatus:" + ((HttpServletResponse) servletResponse).getStatus() + "");
+        log.info("response return data:" + result);
+        log.info("response url:" + url + " httpStatus:" + ((HttpServletResponse) servletResponse).getStatus() + "");
     }
 
     @Override

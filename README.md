@@ -1,5 +1,5 @@
 # springboot-distributed-demo
-以最优雅的方式示例了springboot最简单的最全集成的例子。
+[以最优雅的方式示例了springboot最简单的最全集成的例子](https://github.com/sjlian/springboot-distributed-demo)
 
 核心技术
 
@@ -24,7 +24,9 @@
         spring做法是Environment直接继承RelaxedPropertyResolver，可以直接用Environment对象调用getProperty，无需再new一个对象。
         这里给出该package的原因是为了优雅的使用sharding-jdbc，待sharding-jdbc升级改掉该issue后删去该package即可
 
+[使用文档](https://github.com/sjlian/springboot-distributed-demo/blob/master/script/doc.md)
 更新日志
+
 12.27日更新
 
         所有依赖更新为最新版本
@@ -52,12 +54,13 @@
 
 
 19.07.26日更新
+
+
         1.加入了使用文档
         2.升级所有依赖为最新稳定版本.
             springboot:2.1.6
             mysql-connector-java 8.0.17
             druid   1.1.19
-            sharding-jdbc   3.1.0
             javamelody 1.78.0
             zxing   3.4.0
             commons-lang3   3.9

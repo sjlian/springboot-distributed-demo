@@ -1,6 +1,8 @@
 package com.lian.domain.entity;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +12,8 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "t_user_roles")
+@Setter
+@Getter
 public class UserRoleEntity {
     @Id
     @Column(name = "username")
@@ -21,20 +25,4 @@ public class UserRoleEntity {
     @ApiModelProperty(value = "角色名",allowEmptyValue = false,readOnly=false)
     @NotNull(message = "角色名不能为空")
     private String roleName;
-
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
 }

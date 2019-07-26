@@ -1,6 +1,8 @@
 package com.lian.domain.entity;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +12,8 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "t_roles_permission")
+@Setter
+@Getter
 public class RolesPermissionEntity {
     @Id
     @Column(name = "role_name")
@@ -21,20 +25,4 @@ public class RolesPermissionEntity {
     @ApiModelProperty(value = "角色权限",allowEmptyValue = true,readOnly=false)
     @NotNull(message = "角色权限")
     private String permission;
-
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
-
-    public String getPermission() {
-        return permission;
-    }
-
-    public void setPermission(String permission) {
-        this.permission = permission;
-    }
 }

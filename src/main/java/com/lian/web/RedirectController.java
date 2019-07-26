@@ -1,7 +1,7 @@
 package com.lian.web;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * 演示控制跳转
@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class RedirectController {
-    @RequestMapping("/")
+    @GetMapping("/")
     public String index() {
         return "redirect:/hello";
     }
 
-    @RequestMapping("/hello")
+    @GetMapping("/hello")
     public String list() {
         return "hello.html";
     }

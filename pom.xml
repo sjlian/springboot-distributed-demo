@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.lian</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>springboot-distributed-demo</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -62,6 +62,11 @@
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-data-redis</artifactId>
         </dependency>
+        <!-- mongo -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
         <!-- 持久层 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -86,15 +91,10 @@
             <version>1.1.19</version>
         </dependency>
         <!-- 分库分表 -->
-<!--        <dependency>-->
-<!--            <groupId>io.shardingjdbc</groupId>-->
-<!--            <artifactId>sharding-jdbc-core-spring-boot-starter</artifactId>-->
-<!--            <version>2.0.3</version>-->
-<!--        </dependency>-->
         <dependency>
-            <groupId>io.shardingsphere</groupId>
-            <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
-            <version>3.1.0</version>
+            <groupId>io.shardingjdbc</groupId>
+            <artifactId>sharding-jdbc-core-spring-boot-starter</artifactId>
+            <version>2.0.3</version>
         </dependency>
         <!-- 分布式事务 -->
         <dependency>
@@ -142,6 +142,13 @@
             <artifactId>shiro-spring-boot-web-starter</artifactId>
             <version>1.4.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <repositories>

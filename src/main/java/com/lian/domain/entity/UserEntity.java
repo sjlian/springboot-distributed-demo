@@ -1,6 +1,8 @@
 package com.lian.domain.entity;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -11,6 +13,8 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "t_user")
+@Setter
+@Getter
 public class UserEntity {
     @Id
     @Column(name = "id")
@@ -35,44 +39,4 @@ public class UserEntity {
     @ApiModelProperty("乐观锁，version=version时才更新，同时version+1，jpa加上version注解后自动实现了")
     @Column(name = "version")
     private Long version;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
-
-    public Long getVersion() {
-        return version;
-    }
-
-    public void setVersion(Long version) {
-        this.version = version;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
