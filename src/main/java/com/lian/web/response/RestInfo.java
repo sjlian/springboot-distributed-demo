@@ -1,4 +1,4 @@
-package com.lian.common.response;
+package com.lian.web.response;
 
 /**
  * @Author lian
@@ -17,7 +17,9 @@ public class RestInfo<T> {
     }
 
     public RestInfo(T data) {
-        this.data = data;
+        if (data != null){
+            this.data = data;
+        }
         this.code = OK;
         this.message = SUCCESS;
     }

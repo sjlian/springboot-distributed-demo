@@ -3,8 +3,10 @@ package com.lian.service.impl;
 import com.lian.common.util.LogUtil;
 import com.lian.domain.entity.UserEntity;
 import com.lian.domain.repository.UserRepository;
-import com.lian.common.response.MyException;
 import com.lian.service.UserService;
+import com.lian.web.response.MyException;
+import lombok.extern.slf4j.Slf4j;
+import lombok.extern.slf4j.XSlf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -23,6 +25,7 @@ import java.util.Optional;
  * @Date 2018/3/20
  */
 @Service
+@Slf4j
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
@@ -55,7 +58,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Cacheable(cacheNames = "entity", key = "'user_' + #id")
     public UserEntity findById(Long id) {
-        LogUtil.info("从数据库里获取数据" + id);
+        log.debug("从数据库里获取数据" + id);
         Optional<UserEntity> optional = userRepository.findById(id);
         return optional.orElseGet(UserEntity::new);
 

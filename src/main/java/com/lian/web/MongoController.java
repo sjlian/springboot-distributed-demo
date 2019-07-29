@@ -2,7 +2,7 @@ package com.lian.web;
 
 import com.lian.domain.entity.OrderDoc;
 import com.lian.domain.mongorepository.OrderDocRepository;
-import com.lian.common.response.RestInfo;
+import com.lian.web.response.RestInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

@@ -4,11 +4,16 @@ create database demo_0;
 create database demo_1;
 create database demo_2;
 -- 每个database分别执行下面创建表的sql
-CREATE TABLE `t_order` (
-  `order_no` varchar(255) NOT NULL,
-  `user_id` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`order_no`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `t_order1` (
+                          `order_no` bigint(20) NOT NULL,
+                          `user_id` bigint(20) DEFAULT NULL,
+                          PRIMARY KEY (`order_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `t_order2` (
+                          `order_no` bigint(20) NOT NULL,
+                          `user_id` bigint(20) DEFAULT NULL,
+                          PRIMARY KEY (`order_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `t_roles_permission` (
   `role_name` varchar(255) NOT NULL,

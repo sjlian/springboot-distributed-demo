@@ -3,9 +3,11 @@ package com.lian.domain.entity;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 /**
  * @Author lian
@@ -39,4 +41,7 @@ public class UserEntity {
     @ApiModelProperty("乐观锁，version=version时才更新，同时version+1，jpa加上version注解后自动实现了")
     @Column(name = "version")
     private Long version;
+
+    @CreatedDate
+    private Date createdDate;
 }

@@ -1,7 +1,7 @@
 package com.lian.web;
 
 import com.lian.domain.entity.OrderEntity;
-import com.lian.common.response.RestInfo;
+import com.lian.web.response.RestInfo;
 import com.lian.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -14,12 +14,12 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping("/list")
-    public RestInfo listUser() {
+    public RestInfo listOrder() {
         return new RestInfo<>(orderService.list());
     }
 
     @GetMapping("/get/{orderNo}")
-    public RestInfo getUser(@PathVariable("orderNo") Long orderNo) {
+    public RestInfo getOrder(@PathVariable("orderNo") Long orderNo) {
         OrderEntity entity = orderService.getOrder(orderNo);
         return new RestInfo<>(entity);
     }

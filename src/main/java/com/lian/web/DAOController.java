@@ -1,7 +1,7 @@
 package com.lian.web;
 
 import com.lian.domain.entity.UserEntity;
-import com.lian.common.response.RestInfo;
+import com.lian.web.response.RestInfo;
 import com.lian.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,31 +24,31 @@ public class DAOController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/list")
+    @GetMapping("/listUser")
     public RestInfo getUserList() {
         List<UserEntity> list = userService.findAll();
         return new RestInfo<>(list);
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/getUser/{id}")
     public RestInfo getUser(@PathVariable("id") Long id) {
         UserEntity entity = userService.findById(id);
         return new RestInfo<>(entity);
     }
 
 
-    @PostMapping("/save")
+    @PostMapping("/saveUser")
     public RestInfo save(@RequestBody @Validated UserEntity userEntity) {
         return new RestInfo<>(userService.save(userEntity));
     }
 
-    @PostMapping("/delete/{id}")
+    @PostMapping("/deleteUser/{id}")
     public RestInfo delete(@PathVariable Long id) {
         userService.deleteById(id);
         return new RestInfo();
     }
 
-    @GetMapping("/page")
+    @GetMapping("/pageUser")
     public RestInfo page(@RequestParam(value = "page", required = false, defaultValue = "1") Integer page,
                          @RequestParam(value = "size", required = false, defaultValue = "10") Integer size) {
         Pageable pageable = PageRequest.of(page, size);
@@ -61,7 +61,7 @@ public class DAOController {
      * @param userEntity
      * @return
      */
-    @PostMapping("/deleteWithTransaction")
+    @PostMapping("/deleteUserWithTransaction")
     public RestInfo deleteWithTransaction(@RequestBody UserEntity userEntity){
         userService.deleteWithTransaction(userEntity);
         return new RestInfo<>();

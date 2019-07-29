@@ -1,7 +1,7 @@
 package test.lian;
 
 import com.lian.AppApplication;
-import com.lian.common.response.MyException;
+import com.lian.web.response.MyException;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

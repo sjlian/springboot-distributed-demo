@@ -1,4 +1,4 @@
-package com.lian.common.param;
+package com.lian.web.param;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.WriteListener;
@@ -69,10 +69,10 @@ public class ResponseWrapper extends HttpServletResponseWrapper {
         public boolean isReady() {
             return false;
         }
+
         @Override
         public void setWriteListener(WriteListener writeListener) {
         }
-
     }
 
 }

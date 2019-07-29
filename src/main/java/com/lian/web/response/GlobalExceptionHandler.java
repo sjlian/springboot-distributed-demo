@@ -1,4 +1,4 @@
-package com.lian.common.response;
+package com.lian.web.response;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

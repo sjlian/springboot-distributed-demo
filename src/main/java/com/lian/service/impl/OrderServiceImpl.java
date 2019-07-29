@@ -20,8 +20,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderEntity getOrder(Long orderNo) {
-        Optional<OrderEntity> optional =  orderRepository.findById(orderNo);
-        return optional.orElseGet(OrderEntity::new);
+        return orderRepository.getOne(orderNo);
     }
 
     @Override

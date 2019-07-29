@@ -1,4 +1,4 @@
-package com.lian.common.param;
+package com.lian.web.param;
 
 import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;
@@ -43,6 +43,7 @@ public class ParamRequestWrapper extends HttpServletRequestWrapper {
             }
         };
     }
+
     private byte[] toByteArray(InputStream input) throws IOException {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         byte[] buffer = new byte[4096];

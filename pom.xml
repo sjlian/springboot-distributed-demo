@@ -96,8 +96,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.17</version>
-            <scope>runtime</scope>
+            <version>5.1.47</version>
         </dependency>
         <!-- druid 连接池-->
         <dependency>
@@ -114,6 +113,10 @@
                 <exclusion>
                     <groupId>com.google.guava</groupId>
                     <artifactId>guava</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -180,7 +183,15 @@
             <version>1.18.8</version>
             <scope>provided</scope>
         </dependency>
-
+        <!--        <dependency>-->
+        <!--            <groupId>com.fasterxml.jackson.datatype</groupId>-->
+        <!--            <artifactId>jackson-datatype-hibernate5</artifactId>-->
+        <!--            <version>2.9.9</version>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
     </dependencies>
 
     <repositories>

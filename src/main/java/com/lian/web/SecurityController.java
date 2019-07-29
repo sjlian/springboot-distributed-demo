@@ -1,7 +1,7 @@
 package com.lian.web;
 
 import com.lian.domain.entity.UserEntity;
-import com.lian.common.response.RestInfo;
+import com.lian.web.response.RestInfo;
 import com.lian.service.UserService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;

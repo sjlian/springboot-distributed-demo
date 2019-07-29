@@ -17,12 +17,12 @@ import javax.validation.constraints.NotNull;
 public class RolesPermissionEntity {
     @Id
     @Column(name = "role_name")
-    @ApiModelProperty(value = "角色名",allowEmptyValue = false,readOnly=false)
+    @ApiModelProperty(value = "角色名")
     @NotNull(message = "角色名不能为空")
     private String roleName;
 
     @Column(name = "permission")
-    @ApiModelProperty(value = "角色权限",allowEmptyValue = true,readOnly=false)
+    @ApiModelProperty(value = "角色权限",allowEmptyValue = true)
     @NotNull(message = "角色权限")
     private String permission;
 }
