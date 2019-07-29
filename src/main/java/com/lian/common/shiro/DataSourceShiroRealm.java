@@ -1,4 +1,4 @@
-package com.lian.shiro;
+package com.lian.common.shiro;
 
 import com.lian.domain.entity.RolesPermissionEntity;
 import com.lian.domain.entity.UserEntity;

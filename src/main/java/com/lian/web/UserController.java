@@ -2,8 +2,8 @@ package com.lian.web;
 
 import com.lian.common.util.VerifyCodeUtil;
 import com.lian.domain.entity.UserEntity;
-import com.lian.response.MyException;
-import com.lian.response.RestInfo;
+import com.lian.common.response.MyException;
+import com.lian.common.response.RestInfo;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;

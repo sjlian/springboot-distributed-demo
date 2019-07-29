@@ -1,4 +1,4 @@
-package com.lian.response;
+package com.lian.common.response;
 
 /**
  * @Author lian

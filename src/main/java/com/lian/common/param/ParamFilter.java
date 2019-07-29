@@ -1,4 +1,4 @@
-package com.lian.param;
+package com.lian.common.param;
 
 import lombok.extern.slf4j.Slf4j;
 

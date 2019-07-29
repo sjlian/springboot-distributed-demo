@@ -1,4 +1,4 @@
-package com.lian.param;
+package com.lian.common.param;
 
 import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;

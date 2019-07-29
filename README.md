@@ -1,5 +1,6 @@
 # springboot-distributed-demo
 [以最优雅的方式示例了springboot最简单的最全集成的例子](https://github.com/sjlian/springboot-distributed-demo)
+[使用文档请点击](https://github.com/sjlian/springboot-distributed-demo/blob/master/script/doc.md)
 
 核心技术
 
@@ -24,10 +25,9 @@
         spring做法是Environment直接继承RelaxedPropertyResolver，可以直接用Environment对象调用getProperty，无需再new一个对象。
         这里给出该package的原因是为了优雅的使用sharding-jdbc，待sharding-jdbc升级改掉该issue后删去该package即可
 
-[使用文档](https://github.com/sjlian/springboot-distributed-demo/blob/master/script/doc.md)
 更新日志
 
-12.27日更新
+18.12.27 更新
 
         所有依赖更新为最新版本
         更改tomcat为jetty
@@ -38,12 +38,12 @@
         文件上传下载
         分布式session共享
         
-19.01.02日更新
+19.01.02 更新
     
         引入shiro权限控制。用户-角色-权限 三级级联
         修复部分小问题
         
-19.01.08日更新
+19.01.08 更新
     
         加入sharding-jdbc 分库分表，1主库，2从库，且对t_order表进行了数据分片
         加入注解式事务管理
@@ -53,8 +53,7 @@
         修复部分小问题
 
 
-19.07.26日更新
-
+19.07.26 更新
 
         1.加入了使用文档
         2.升级所有依赖为最新稳定版本.
@@ -66,5 +65,12 @@
             commons-lang3   3.9
             shiro   1.4.1
         3.修改项目名称，groupId和package，使其保持一致。
-        4.加入消息队列操作demo，rabbitmq
-        5.加入mongodb增删改查demo
+        4.加入mongodb增删改查demo
+
+19.07.29 更新
+
+         1.解决所有依赖冲突,以及依赖冲突引起的问题
+         2.解决shardingsphere自动事务配置错误的问题
+         3.调整package更清晰
+
+

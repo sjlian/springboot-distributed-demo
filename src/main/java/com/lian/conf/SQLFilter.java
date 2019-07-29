@@ -1,6 +1,6 @@
 package com.lian.conf;
 
-import com.lian.response.MyException;
+import com.lian.common.response.MyException;
 /**
  * SQL过滤
  * @author chenshun

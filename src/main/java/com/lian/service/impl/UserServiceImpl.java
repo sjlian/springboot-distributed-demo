@@ -3,7 +3,7 @@ package com.lian.service.impl;
 import com.lian.common.util.LogUtil;
 import com.lian.domain.entity.UserEntity;
 import com.lian.domain.repository.UserRepository;
-import com.lian.response.MyException;
+import com.lian.common.response.MyException;
 import com.lian.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;

@@ -1,6 +1,6 @@
 package com.lian.conf;
 
-import com.lian.shiro.DataSourceShiroRealm;
+import com.lian.common.shiro.DataSourceShiroRealm;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.web.config.DefaultShiroFilterChainDefinition;
 import org.apache.shiro.spring.web.config.ShiroFilterChainDefinition;

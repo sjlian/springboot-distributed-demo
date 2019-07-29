@@ -1,7 +1,7 @@
 package com.lian.web;
 
 import com.lian.domain.entity.UserEntity;
-import com.lian.response.RestInfo;
+import com.lian.common.response.RestInfo;
 import com.lian.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

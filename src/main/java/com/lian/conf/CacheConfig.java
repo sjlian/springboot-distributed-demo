@@ -62,7 +62,6 @@ public class CacheConfig extends CachingConfigurerSupport {
                 .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(valueSerializer()))//value序列化方式
                 .disableCachingNullValues()
                 .entryTtl(timeToLive);//缓存过期时间
-
         RedisCacheManager.RedisCacheManagerBuilder builder = RedisCacheManager.RedisCacheManagerBuilder
                 .fromConnectionFactory(lettuceConnectionFactory())
                 .cacheDefaults(config)
